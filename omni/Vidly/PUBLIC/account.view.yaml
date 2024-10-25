@@ -82,11 +82,6 @@ measures:
   count:
     aggregate_type: count
 
-  calculation:
-    sql: COALESCE(${opportunity.value}, 0)
-    label: My Example
-    aggregate_type: sum
-
 filters:
   period_selector:
     type: string

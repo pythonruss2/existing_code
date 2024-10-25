@@ -1,0 +1,85 @@
+# Reference this view as customquery
+schema: PUBLIC
+sql: |
+  select 
+    * 
+  from 
+    public.account a
+  where 
+    1=1
+    AND {{# account.name.filter }} a.name {{/ account.name.filter}}
+
+dimensions:
+  id:
+    sql: '"ID"'
+
+  name:
+    sql: '"NAME"'
+
+  owner_id:
+    sql: '"OWNER_ID"'
+
+  billing_address:
+    sql: '"BILLING_ADDRESS"'
+
+  billing_address2:
+    sql: '"BILLING_ADDRESS2"'
+
+  billing_city:
+    sql: '"BILLING_CITY"'
+
+  billing_state:
+    sql: '"BILLING_STATE"'
+
+  billing_zip:
+    sql: '"BILLING_ZIP"'
+
+  billing_county:
+    sql: '"BILLING_COUNTY"'
+
+  employees_c:
+    sql: '"EMPLOYEES_C"'
+
+  revenue_c:
+    sql: '"REVENUE_C"'
+
+  website:
+    sql: '"WEBSITE"'
+
+  segment:
+    sql: '"SEGMENT"'
+
+  status:
+    sql: '"STATUS"'
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+  customer_size:
+    sql: |-
+      case 
+        when ${account.employees_c}>1000 then 'large'  
+        when ${account.employees_c}>100 then 'medium' 
+      else 'small' 
+      end
+
+  foo:
+    sql: |
+      (
+      select 1
+      )
+
+  calculation:
+    sql: CURRENT_DATE
+    label: Calculation
+
+measures:
+  count:
+    aggregate_type: count
+
+  example:
+    sql: |
+      case when ${account.billing_state} = 'AZ' then ${account.employees_c}
+      else 0
+      end
+    aggregate_type: sum

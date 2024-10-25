@@ -1,0 +1,11 @@
+# Reference this view as test_lat_lon
+sql: |
+  select 36.9715838 as lat, -122.0381689 as lon 
+
+# @36.9715838,-122.0381689
+dimensions:
+  lat:
+    sql: '"LAT"'
+
+  lon:
+    sql: '"LON"'

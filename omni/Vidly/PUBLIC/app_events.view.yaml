@@ -1,0 +1,44 @@
+# Reference this view as app_events
+schema: PUBLIC
+table_name: APP_EVENTS
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  user_id:
+    sql: '"USER_ID"'
+    format: ID
+
+  event_type:
+    sql: '"EVENT_TYPE"'
+
+  user_agent:
+    sql: '"USER_AGENT"'
+
+  ip_address:
+    sql: '"IP_ADDRESS"'
+
+  event_date:
+    sql: '"EVENT_DATE"'
+
+  ad_play_id:
+    sql: '"AD_PLAY_ID"'
+    format: ID
+
+  video_id:
+    sql: '"VIDEO_ID"'
+    format: ID
+    links:
+      - url: https://russ.playground.exploreomni.dev/dashboards/39bb1737/edit?f--videos.id=%7B%22values%22%3A%5B%22${app_events.video_id}%22%5D%7D
+        label: Lookup Video
+
+  duration:
+    sql: '"DURATION"'
+
+measures:
+  count:
+    drill_fields: [ user.first_name, user.last_name, app_events.* ]
+    aggregate_type: count

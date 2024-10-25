@@ -1,0 +1,24 @@
+topics:
+  test_lat_lon:
+    joins: {}
+
+
+  account:
+    base_view: account
+
+    joins:
+      sfdcuser: {}
+      opportunity: {}
+
+
+  events:
+    base_view: app_events
+
+    joins:
+      user: {}
+      videos: {}
+
+
+  customquery:
+    joins:
+      account: {}

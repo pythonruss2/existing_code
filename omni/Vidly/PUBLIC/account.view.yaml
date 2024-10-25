@@ -1,0 +1,103 @@
+# Reference this view as account
+schema: PUBLIC
+table_name: ACCOUNT
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  name:
+    sql: '"NAME"'
+
+  owner_id:
+    sql: '"OWNER_ID"'
+    format: ID
+
+  billing_address:
+    sql: '"BILLING_ADDRESS"'
+
+  billing_address2:
+    sql: '"BILLING_ADDRESS2"'
+
+  billing_city:
+    sql: '"BILLING_CITY"'
+
+  billing_state:
+    sql: '"BILLING_STATE"'
+
+  billing_zip:
+    sql: '"BILLING_ZIP"'
+
+  billing_county:
+    sql: '"BILLING_COUNTY"'
+
+  employees_c:
+    sql: '"EMPLOYEES_C"'
+
+  revenue_c:
+    sql: '"REVENUE_C"'
+
+  website:
+    sql: '"WEBSITE"'
+
+  segment:
+    sql: '"SEGMENT"'
+
+  status:
+    sql: '"STATUS"'
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+  is_big:
+    sql: ${employees_c} > 1000
+
+  last_date:
+    sql: omni_dimensionalize(max(${created_date}))
+    # hidden: true
+
+  test_dynamic_time_grain:
+    sql: |
+      {{# account.period_selector.filter }}name{{/ account.period_selector.filter }}
+      {{^ account.period_selector.filter }}name like '%foo%'{{/ account.period_selector.filter }}
+
+  test_dynamic_time_grain_2:
+    sql: |
+      {{# account.period_selector.filter }}name{{/ account.period_selector.filter }}
+      {{^ account.period_selector.filter }}name like '%foo%'{{/ account.period_selector.filter }}
+
+  created_date_dynamic:
+    sql: |
+      CASE 
+        WHEN {{# account.timeframe_selector.filter }} 'Daily' {{/ account.timeframe_selector.filter }} THEN ${created_date[date]} 
+        WHEN {{# account.timeframe_selector.filter }} 'Weekly' {{/ account.timeframe_selector.filter }} THEN ${created_date[week]} 
+        WHEN {{# account.timeframe_selector.filter }} 'Monthly' {{/ account.timeframe_selector.filter }} THEN ${created_date[month]}
+      END
+    label: Dynamic
+    timeframes: [ date ]
+
+measures:
+  count:
+    aggregate_type: count
+
+  calculation:
+    sql: COALESCE(${opportunity.value}, 0)
+    label: My Example
+    aggregate_type: sum
+
+filters:
+  period_selector:
+    type: string
+    suggestion_list:
+      - value: Month
+      - value: Week
+      - value: Year
+
+  timeframe_selector:
+    type: string
+    suggestion_list:
+      - value: Daily
+      - value: Weekly
+      - value: Monthly

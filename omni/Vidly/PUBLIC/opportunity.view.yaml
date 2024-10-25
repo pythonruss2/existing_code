@@ -1,0 +1,53 @@
+# Reference this view as opportunity
+schema: PUBLIC
+table_name: OPPORTUNITY
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  value:
+    sql: '"VALUE"'
+
+  account_id:
+    sql: '"ACCOUNT_ID"'
+    format: ID
+
+  owner_id:
+    sql: '"OWNER_ID"'
+    format: ID
+
+  opened_date:
+    sql: '"OPENED_DATE"'
+
+  closed_date:
+    sql: '"CLOSED_DATE"'
+
+  name:
+    sql: '"NAME"'
+
+  status:
+    sql: '"STATUS"'
+
+  stage_name:
+    sql: '"STAGE_NAME"'
+
+  forecast_category:
+    sql: '"FORECAST_CATEGORY"'
+
+measures:
+  total_arr:
+    sql: ${value}
+    aggregate_type: sum
+
+  count:
+    aggregate_type: count
+
+  qualified_revenue:
+    sql: |
+      CASE WHEN ${account.is_big} then ${value}
+      ELSE 0
+      END
+    aggregate_type: sum

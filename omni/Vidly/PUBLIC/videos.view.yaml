@@ -1,0 +1,40 @@
+# Reference this view as videos
+schema: PUBLIC
+table_name: VIDEOS
+
+dimensions:
+  title:
+    sql: '"TITLE"'
+
+  id:
+    sql: '"ID"'
+    format: ID
+    links:
+      - url: https://russ.playground.exploreomni.dev/dashboards/39bb1737/edit?f--videos.id=%7B%22values%22%3A%5B%22${videos.id}%22%5D%7D
+        label: Lookup Video
+    primary_key: true
+
+  duration:
+    sql: '"DURATION"'
+
+  content_type:
+    sql: '"CONTENT_TYPE"'
+
+  description:
+    sql: '"DESCRIPTION"'
+
+  audio_language:
+    sql: '"AUDIO_LANGUAGE"'
+
+  image_url:
+    sql: '"IMAGE_URL"'
+
+  parenttitle_year:
+    sql: '"PARENTTITLE_YEAR"'
+
+  parenttitle_title:
+    sql: '"PARENTTITLE_TITLE"'
+
+measures:
+  count:
+    aggregate_type: count

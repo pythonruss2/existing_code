@@ -1,0 +1,32 @@
+# Reference this view as sfdcuser
+schema: PUBLIC
+table_name: SFDCUSER
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  first_name:
+    sql: '"FIRST_NAME"'
+
+  last_name:
+    sql: '"LAST_NAME"'
+
+  full_name:
+    sql: ${first_name} || ' ' || ${last_name}
+
+  email:
+    sql: '"EMAIL"'
+
+  role_id:
+    sql: '"ROLE_ID"'
+    format: ID
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

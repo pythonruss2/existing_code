@@ -1,0 +1,61 @@
+# Reference this view as user
+schema: PUBLIC
+table_name: USER
+
+dimensions:
+  id:
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  first_name:
+    sql: '"FIRST_NAME"'
+
+  last_name:
+    sql: '"LAST_NAME"'
+
+  signup_date:
+    sql: '"SIGNUP_DATE"'
+
+  email:
+    sql: '"EMAIL"'
+    links:
+      - url: https://russ.playground.exploreomni.dev/dashboards/542f7718?f--user.email=%7B%22values%22%3A%5B%22${user.email}%22%5D%7D
+        label: Lookup User
+
+  address:
+    sql: '"ADDRESS"'
+
+  city:
+    sql: '"CITY"'
+
+  state:
+    sql: '"STATE"'
+
+  zip:
+    sql: '"ZIP"'
+
+  gender:
+    sql: '"GENDER"'
+
+  age:
+    sql: '"AGE"'
+
+  status:
+    sql: '"STATUS"'
+
+  traffic_source:
+    sql: '"TRAFFIC_SOURCE"'
+
+  plan_type:
+    sql: '"PLAN_TYPE"'
+
+  subscription_term:
+    sql: '"SUBSCRIPTION_TERM"'
+
+  next_billing_date:
+    sql: '"NEXT_BILLING_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

@@ -42,6 +42,14 @@ measures:
     sql: ${value}
     aggregate_type: sum
 
+  example_percentile:
+    sql: |
+      case when ${opened_date} between DATEADD(DAY, -180, {{filters.opportunity.crazy_date.range_start}}) and {{filters.opportunity.crazy_date.range_start}} then ${value}
+      else null
+      end
+    aggregate_type: percentile
+    percentile: 25
+
   count:
     aggregate_type: count
 
@@ -51,3 +59,7 @@ measures:
       ELSE 0
       END
     aggregate_type: sum
+
+filters:
+  crazy_date:
+    type: timestamp

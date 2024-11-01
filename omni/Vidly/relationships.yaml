@@ -28,7 +28,7 @@
   join_to_view: opportunity
   join_type: always_left
   on_sql: ${account.id} = ${opportunity.account_id}
-  relationship_type: many_to_one
+  relationship_type: one_to_many
 
 - join_from_view: customquery
   join_to_view: account

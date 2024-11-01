@@ -78,6 +78,10 @@ dimensions:
     label: Dynamic
     timeframes: [ date ]
 
+  calculation:
+    sql: CAST(${account.billing_zip} AS DECIMAL(19, 9)) + 5
+    label: Calculation
+
 measures:
   count:
     aggregate_type: count

@@ -20,5 +20,9 @@ topics:
 
 
   customquery:
+    access_filters:
+      - field: customquery.foo
+        user_attribute: foo
+
     joins:
       account: {}

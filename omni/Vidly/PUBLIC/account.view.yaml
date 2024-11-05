@@ -52,7 +52,7 @@ dimensions:
     sql: '"CREATED_DATE"'
 
   is_big:
-    sql: ${employees_c} > 1000
+    sql: ${employees_c} > 100000
 
 measures:
   count:

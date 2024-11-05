@@ -63,4 +63,5 @@ measures:
       CASE WHEN ${is_big} then 1
       ELSE 0
       END
+    drill_fields: [ id, name, employees_c ]
     aggregate_type: count

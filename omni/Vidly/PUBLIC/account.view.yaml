@@ -54,49 +54,6 @@ dimensions:
   is_big:
     sql: ${employees_c} > 1000
 
-  last_date:
-    sql: omni_dimensionalize(max(${created_date}))
-    # hidden: true
-
-  test_dynamic_time_grain:
-    sql: |
-      {{# account.period_selector.filter }}name{{/ account.period_selector.filter }}
-      {{^ account.period_selector.filter }}name like '%foo%'{{/ account.period_selector.filter }}
-
-  test_dynamic_time_grain_2:
-    sql: |
-      {{# account.period_selector.filter }}name{{/ account.period_selector.filter }}
-      {{^ account.period_selector.filter }}name like '%foo%'{{/ account.period_selector.filter }}
-
-  created_date_dynamic:
-    sql: |
-      CASE 
-        WHEN {{# account.timeframe_selector.filter }} 'Daily' {{/ account.timeframe_selector.filter }} THEN ${created_date[date]} 
-        WHEN {{# account.timeframe_selector.filter }} 'Weekly' {{/ account.timeframe_selector.filter }} THEN ${created_date[week]} 
-        WHEN {{# account.timeframe_selector.filter }} 'Monthly' {{/ account.timeframe_selector.filter }} THEN ${created_date[month]}
-      END
-    label: Dynamic
-    timeframes: [ date ]
-
-  calculation:
-    sql: CAST(${account.billing_zip} AS DECIMAL(19, 9)) + 5
-    label: Calculation
-
 measures:
   count:
     aggregate_type: count
-
-filters:
-  period_selector:
-    type: string
-    suggestion_list:
-      - value: Month
-      - value: Week
-      - value: Year
-
-  timeframe_selector:
-    type: string
-    suggestion_list:
-      - value: Daily
-      - value: Weekly
-      - value: Monthly

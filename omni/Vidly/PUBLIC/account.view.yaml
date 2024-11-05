@@ -57,3 +57,10 @@ dimensions:
 measures:
   count:
     aggregate_type: count
+
+  count_large:
+    sql: |
+      CASE WHEN ${is_big} then 1
+      ELSE 0
+      END
+    aggregate_type: count

@@ -20,6 +20,12 @@ dimensions:
   email:
     sql: '"EMAIL"'
 
+  masked_email:
+    sql: |
+      CASE WHEN {{ sfdcuser.email.in_query }} THEN ${email}
+      ELSE 'masked'
+      END
+
   role_id:
     sql: '"ROLE_ID"'
     format: ID

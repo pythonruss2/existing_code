@@ -54,6 +54,10 @@ dimensions:
   is_big:
     sql: ${employees_c} > 100000
 
+  parse_street_number:
+    sql: ${account.billing_address}
+    label: Parse Street Number
+
 measures:
   count:
     aggregate_type: count

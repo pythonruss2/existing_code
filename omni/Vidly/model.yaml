@@ -14,7 +14,7 @@ topics:
   account:
     base_view: account
 
-    required_access_grants: [ foo_example ]
+    required_access_grants: [ foo_example, foo_counterexample ]
 
     joins:
       sfdcuser: {}

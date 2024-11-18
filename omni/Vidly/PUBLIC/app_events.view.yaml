@@ -42,3 +42,7 @@ measures:
   count:
     drill_fields: [ user.first_name, user.last_name, app_events.* ]
     aggregate_type: count
+
+  example_cant_push:
+    sql: ${app_events.count} + 1
+    label: example_cant_push

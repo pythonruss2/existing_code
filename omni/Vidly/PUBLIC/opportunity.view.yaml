@@ -60,6 +60,14 @@ measures:
       END
     aggregate_type: sum
 
+  arr_floor:
+    sql: CAST(FLOOR(${opportunity.total_arr}) AS BIGINT)
+    label: ARR Floor
+
+  attempt_to_promote:
+    sql: ${opportunity.total_arr} + ${opportunity.arr_floor}
+    label: Attempt to promote
+
 filters:
   crazy_date:
     type: timestamp

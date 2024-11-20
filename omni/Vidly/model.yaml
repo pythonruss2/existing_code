@@ -1,20 +1,6 @@
-access_grants:
-  foo_example:
-    user_attribute: foo
-    allowed_values: [ "1" ]
-  foo_counterexample:
-    user_attribute: foo
-    allowed_values: [ "2" ]
-
 topics:
-  test_lat_lon:
-    joins: {}
-
-
   account:
     base_view: account
-
-    required_access_grants: [ foo_example, foo_counterexample ]
 
     joins:
       sfdcuser: {}

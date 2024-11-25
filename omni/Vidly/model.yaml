@@ -13,4 +13,3 @@ topics:
     joins:
       user: {}
       videos: {}
-# one more change

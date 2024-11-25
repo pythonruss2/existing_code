@@ -64,12 +64,6 @@ dimensions:
       else 'small' 
       end
 
-  foo:
-    sql: |
-      (
-      select 1
-      )
-
   calculation:
     sql: CURRENT_DATE
     label: Calculation
@@ -77,10 +71,3 @@ dimensions:
 measures:
   count:
     aggregate_type: count
-
-  example:
-    sql: |
-      case when ${account.billing_state} = 'AZ' then ${account.employees_c}
-      else 0
-      end
-    aggregate_type: sum

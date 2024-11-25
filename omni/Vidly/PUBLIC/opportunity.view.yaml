@@ -42,32 +42,5 @@ measures:
     sql: ${value}
     aggregate_type: sum
 
-  example_percentile:
-    sql: |
-      case when ${opened_date} between DATEADD(DAY, -180, {{filters.opportunity.crazy_date.range_start}}) and {{filters.opportunity.crazy_date.range_start}} then ${value}
-      else null
-      end
-    aggregate_type: percentile
-    percentile: 25
-
   count:
     aggregate_type: count
-
-  qualified_revenue:
-    sql: |
-      CASE WHEN ${account.is_big} then ${value}
-      ELSE 0
-      END
-    aggregate_type: sum
-
-  arr_floor:
-    sql: CAST(FLOOR(${opportunity.total_arr}) AS BIGINT)
-    label: ARR Floor
-
-  attempt_to_promote:
-    sql: ${opportunity.total_arr} + ${opportunity.arr_floor}
-    label: Attempt to promote
-
-filters:
-  crazy_date:
-    type: timestamp

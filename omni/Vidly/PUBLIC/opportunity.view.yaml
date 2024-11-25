@@ -44,3 +44,7 @@ measures:
 
   count:
     aggregate_type: count
+
+  sum_of_opp_value:
+    sql: SUM(${opportunity.value})
+    label: Sum Of Opp Value

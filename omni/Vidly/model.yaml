@@ -13,13 +13,4 @@ topics:
     joins:
       user: {}
       videos: {}
-
-
-  customquery:
-    access_filters:
-      - field: customquery.foo
-        user_attribute: foo
-
-    joins:
-      account: {}
 # one more change

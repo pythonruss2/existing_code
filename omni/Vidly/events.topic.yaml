@@ -1,0 +1,5 @@
+base_view: app_events
+
+joins:
+  user: {}
+  videos: {}

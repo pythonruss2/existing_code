@@ -65,7 +65,3 @@ measures:
       END
     drill_fields: [ id, name, employees_c ]
     aggregate_type: count
-
-  count_plus_one:
-    sql: ${account.count_large} + 1
-    label: Count Plus One

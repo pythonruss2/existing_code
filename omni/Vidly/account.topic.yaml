@@ -3,3 +3,16 @@ base_view: account
 joins:
   sfdcuser: {}
   opportunity: {}
+
+relationships:
+  - join_from_view: account
+    join_to_view: sfdcuser
+    join_type: always_left
+    on_sql: ${account.owner_id} = ${sfdcuser.id}
+    relationship_type: many_to_one
+
+  - join_from_view: account
+    join_to_view: opportunity
+    join_type: always_left
+    on_sql: ${account.id} = ${opportunity.account_id}
+    relationship_type: one_to_many

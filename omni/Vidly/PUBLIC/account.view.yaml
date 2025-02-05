@@ -8,6 +8,9 @@ dimensions:
     format: ID
     primary_key: true
 
+  # compound_key:
+  #   sql: CONCAT(${id},' - ',${version})
+
   name:
     sql: '"NAME"'
 

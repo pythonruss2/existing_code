@@ -1,16 +1,12 @@
 # Reference this view as example
 sql: |
-  select 1 as num, 'a' as lttr union all
-  select 2, 'b' union all
-  select 3, 'c' union all
-  select 4, 'd' union all
-  select 5, 'e'
+  select 1 as num union all
+  select 2 union all
+  select 3 union all
+  select 4 union all
+  select 5
 
 dimensions:
   num:
     sql: '"NUM"'
-    description: Im from the shared model
-
-  lttr:
-    sql: '"LTTR"'
     description: Im from the shared model

@@ -9,4 +9,5 @@ sql: |
 dimensions:
   num:
     sql: '"NUM"'
+    label: Hello from the shared model
     description: Im from the shared model

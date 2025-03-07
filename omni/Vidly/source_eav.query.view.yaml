@@ -150,6 +150,7 @@ dimensions:
   test130:
     sql: ${source_eav.numeric_value}
     label: cool
+    description: foo
     drill_fields: [ source_eav.numeric_value ]
 
 measures:

@@ -1,0 +1,29 @@
+# Reference this view as employees
+query:
+  fields:
+    source_eav.employee_id: employee_id
+    source_eav.user_id: user_id
+    source_eav.company_id: company_id
+    source_eav.pay: pay
+    source_eav.job: job
+    source_eav.name: name
+    source_eav.start_date: start_date
+  base_view: source_eav
+  topic: source_eav
+
+dimensions:
+  employee_id: {}
+  pay: {}
+  job: {}
+  name: {}
+  start_date: {}
+
+  company_id:
+    hidden: true
+
+  user_id:
+    hidden: true
+
+measures:
+  count:
+    aggregate_type: count

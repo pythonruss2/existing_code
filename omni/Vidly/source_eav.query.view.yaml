@@ -139,6 +139,19 @@ dimensions:
       END
     hidden: true
 
+  test128:
+    sql: ${source_eav.numeric_value}
+    drill_fields: [ source_eav.numeric_value ]
+
+  test129:
+    sql: ${source_eav.numeric_value}
+    drill_fields: [ source_eav.numeric_value ]
+
+  test130:
+    sql: ${source_eav.numeric_value}
+    label: cool
+    drill_fields: [ source_eav.numeric_value ]
+
 measures:
   #these measures collapse the sparse matrix and "flatten" the EAV data structure through a max/case when
   pay:

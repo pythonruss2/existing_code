@@ -1,0 +1,7 @@
+# access_filters:
+#   - field: employees.user_id
+#     user_attribute: company_id
+#     values_for_unfiltered: [ "0" ]
+
+# this is the employees topic
+joins: {}

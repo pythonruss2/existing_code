@@ -1,1 +1,6 @@
 week_start_day: Sunday
+
+access_grants:
+  test:
+    user_attribute: company_id
+    allowed_values: [ "1" ]

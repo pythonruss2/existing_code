@@ -7,7 +7,6 @@ dimensions:
     sql: '"ID"'
     format: ID
     primary_key: true
-    required_access_grants: [ test ]
 
   # compound_key:
   #   sql: CONCAT(${id},' - ',${version})

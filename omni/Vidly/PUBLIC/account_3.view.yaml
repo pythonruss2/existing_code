@@ -3,6 +3,9 @@ schema: PUBLIC
 table_name: ACCOUNT_3
 
 dimensions:
+  account_status:
+    sql: '"account.status"'
+
   account_count_large:
     sql: '"account.count_large"'
 

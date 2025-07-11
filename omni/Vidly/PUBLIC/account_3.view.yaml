@@ -1,0 +1,11 @@
+# Reference this view as account_3
+schema: PUBLIC
+table_name: ACCOUNT_3
+
+dimensions:
+  account_count_large:
+    sql: '"account.count_large"'
+
+measures:
+  count:
+    aggregate_type: count

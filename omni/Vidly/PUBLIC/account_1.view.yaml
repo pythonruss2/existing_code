@@ -1,0 +1,20 @@
+# Reference this view as account_1
+schema: PUBLIC
+table_name: ACCOUNT_1
+
+dimensions:
+  account_status:
+    sql: '"account.status"'
+
+  account_created_date_quarter___raw:
+    sql: '"account.created_date[quarter]__raw"'
+
+  account_count_large:
+    sql: '"account.count_large"'
+
+  account_created_date_quarter_:
+    sql: '"account.created_date[quarter]"'
+
+measures:
+  count:
+    aggregate_type: count

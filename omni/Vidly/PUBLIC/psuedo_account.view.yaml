@@ -1,0 +1,15 @@
+# Reference this view as psuedo_account
+schema: PUBLIC
+table_name: PSUEDO_ACCOUNT
+
+dimensions:
+  account_id:
+    sql: '"account.id"'
+    format: ID
+
+  account_count_large:
+    sql: '"account.count_large"'
+
+measures:
+  count:
+    aggregate_type: count

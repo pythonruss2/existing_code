@@ -1,0 +1,20 @@
+# Reference this view as agg_feb_13
+schema: PUBLIC
+table_name: AGG_FEB_13
+
+dimensions:
+  opportunity_stage_name:
+    sql: '"opportunity.stage_name"'
+
+  account_created_date_quarter___raw:
+    sql: '"account.created_date[quarter]__raw"'
+
+  account_count_large:
+    sql: '"account.count_large"'
+
+  account_created_date_quarter_:
+    sql: '"account.created_date[quarter]"'
+
+measures:
+  count:
+    aggregate_type: count

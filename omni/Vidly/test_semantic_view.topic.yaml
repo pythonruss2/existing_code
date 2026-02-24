@@ -1,0 +1,4 @@
+# Topic is generated from the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+base_view: test_semantic_view
+label: Test Semantic View
+description: this is my description

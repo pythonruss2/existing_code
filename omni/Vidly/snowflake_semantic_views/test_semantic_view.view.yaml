@@ -1,0 +1,49 @@
+# Reference this view as test_semantic_view
+folder: snowflake_semantic_views
+semantic_view_name: TEST_SEMANTIC_VIEW
+
+dimensions:
+  billing_address:
+    sql: '"BILLING_ADDRESS"'
+
+  billing_address2:
+    sql: '"BILLING_ADDRESS2"'
+
+  billing_city:
+    sql: '"BILLING_CITY"'
+
+  billing_county:
+    sql: '"BILLING_COUNTY"'
+
+  billing_state:
+    sql: '"BILLING_STATE"'
+
+  billing_zip:
+    sql: '"BILLING_ZIP"'
+
+  created_date:
+    sql: '"CREATED_DATE"'
+
+  employees_c:
+    sql: '"EMPLOYEES_C"'
+
+  id:
+    sql: '"ID"'
+
+  name:
+    sql: '"NAME"'
+
+  owner_id:
+    sql: '"OWNER_ID"'
+
+  revenue_c:
+    sql: '"REVENUE_C"'
+
+  segment:
+    sql: '"SEGMENT"'
+
+  status:
+    sql: '"STATUS"'
+
+  website:
+    sql: '"WEBSITE"'

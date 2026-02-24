@@ -1,0 +1,73 @@
+# Reference this view as test_semantic_view___account
+# View is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+schema: PUBLIC
+folder: test_semantic_view
+table_name: ACCOUNT
+
+dimensions:
+  id:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  name:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"NAME"'
+
+  owner_id:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"OWNER_ID"'
+    format: ID
+
+  billing_address:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_ADDRESS"'
+
+  billing_address2:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_ADDRESS2"'
+
+  billing_city:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_CITY"'
+
+  billing_state:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_STATE"'
+
+  billing_zip:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_ZIP"'
+
+  billing_county:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"BILLING_COUNTY"'
+
+  employees_c:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"EMPLOYEES_C"'
+
+  revenue_c:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"REVENUE_C"'
+
+  website:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"WEBSITE"'
+
+  segment:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"SEGMENT"'
+
+  status:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"STATUS"'
+
+  created_date:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"CREATED_DATE"'
+
+measures:
+  count:
+    aggregate_type: count

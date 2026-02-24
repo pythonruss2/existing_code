@@ -47,3 +47,7 @@ dimensions:
 
   website:
     sql: '"WEBSITE"'
+
+measures:
+  count:
+    aggregate_type: count

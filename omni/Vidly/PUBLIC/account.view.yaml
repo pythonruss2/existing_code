@@ -1,4 +1,6 @@
 # Reference this view as account
+label: shiva is cool!
+
 schema: PUBLIC
 table_name: ACCOUNT
 

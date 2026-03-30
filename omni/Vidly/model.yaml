@@ -1,1 +1,5 @@
+ai_settings:
+  analyze_configuration:
+    thinking: none
+
 week_start_day: Sunday

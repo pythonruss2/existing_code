@@ -5,48 +5,87 @@ semantic_view_name: TEST_SEMANTIC_VIEW
 dimensions:
   billing_address:
     sql: '"BILLING_ADDRESS"'
+    view_label: Account
 
   billing_address2:
     sql: '"BILLING_ADDRESS2"'
+    view_label: Account
 
   billing_city:
     sql: '"BILLING_CITY"'
+    view_label: Account
 
   billing_county:
     sql: '"BILLING_COUNTY"'
+    view_label: Account
 
   billing_state:
     sql: '"BILLING_STATE"'
+    view_label: Account
 
   billing_zip:
     sql: '"BILLING_ZIP"'
+    view_label: Account
 
   created_date:
     sql: '"CREATED_DATE"'
+    view_label: Account
 
   employees_c:
     sql: '"EMPLOYEES_C"'
+    view_label: Account
 
   id:
     sql: '"ID"'
+    view_label: Account
 
   name:
     sql: '"NAME"'
+    view_label: Account
 
   owner_id:
     sql: '"OWNER_ID"'
+    view_label: Account
 
   revenue_c:
     sql: '"REVENUE_C"'
+    view_label: Account
 
   segment:
     sql: '"SEGMENT"'
+    view_label: Account
 
   status:
     sql: '"STATUS"'
+    view_label: Account
 
   website:
     sql: '"WEBSITE"'
+    view_label: Account
+
+  value:
+    sql: '"VALUE"'
+    view_label: Opportunity
+
+  account_id:
+    sql: '"ACCOUNT_ID"'
+    view_label: Opportunity
+
+  closed_date:
+    sql: '"CLOSED_DATE"'
+    view_label: Opportunity
+
+  forecast_category:
+    sql: '"FORECAST_CATEGORY"'
+    view_label: Opportunity
+
+  opened_date:
+    sql: '"OPENED_DATE"'
+    view_label: Opportunity
+
+  stage_name:
+    sql: '"STAGE_NAME"'
+    view_label: Opportunity
 
 measures:
   count:

@@ -1,0 +1,54 @@
+# Reference this view as test_semantic_view__opportunity
+# View is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+schema: PUBLIC
+folder: test_semantic_view
+table_name: OPPORTUNITY
+
+dimensions:
+  id:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"ID"'
+    format: ID
+    primary_key: true
+
+  value:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"VALUE"'
+
+  account_id:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"ACCOUNT_ID"'
+    format: ID
+
+  owner_id:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"OWNER_ID"'
+    format: ID
+
+  opened_date:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"OPENED_DATE"'
+
+  closed_date:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"CLOSED_DATE"'
+
+  name:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"NAME"'
+
+  status:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"STATUS"'
+
+  stage_name:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"STAGE_NAME"'
+
+  forecast_category:
+    # Dimension is defined in the semantic view TEST_SEMANTIC_VIEW in the data warehouse
+    sql: '"FORECAST_CATEGORY"'
+
+measures:
+  count:
+    aggregate_type: count

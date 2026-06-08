@@ -3,8 +3,3 @@ ai_settings:
     thinking: none
 
 week_start_day: Sunday
-
-access_grants:
-  restrict_our_toopic_from_ai:
-    user_attribute: omni_user_email
-    allowed_values: [ example@omni.co ]

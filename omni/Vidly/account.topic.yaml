@@ -3,8 +3,6 @@ hidden: true
 # hidden: true
 base_view: account
 
-required_access_grants: [ restrict_our_toopic_from_ai ]
-
 joins:
   sfdcuser: {}
   opportunity: {}

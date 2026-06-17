@@ -19,7 +19,7 @@ dimensions:
     format: ID
 
   billing_address:
-    sql: '"BILLING_ADDRESSX"'
+    sql: '"BILLING_ADDRESS"'
 
   billing_address2:
     sql: '"BILLING_ADDRESS2"'

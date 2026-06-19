@@ -20,6 +20,7 @@ dimensions:
 
   billing_address:
     sql: '"BILLING_ADDRESS"'
+    description: foo!
 
   billing_address2:
     sql: '"BILLING_ADDRESS2"'

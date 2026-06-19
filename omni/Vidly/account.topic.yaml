@@ -2,6 +2,7 @@
 
 # hidden: true
 base_view: account
+label: Account
 
 joins:
   sfdcuser: {}

@@ -1,5 +1,7 @@
 ai_settings:
   analyze_configuration:
     thinking: none
+  allow_custom_fields: never
+  allow_ctes: never
 
 week_start_day: Sunday

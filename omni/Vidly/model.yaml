@@ -1,4 +1,5 @@
 ai_settings:
+  query_all_views_and_fields: disabled
   analyze_configuration:
     thinking: none
   allow_custom_fields: never
